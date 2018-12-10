@@ -18,8 +18,7 @@ public class LineDraw : MonoBehaviour {
 	void Update () {
         if (isFired)
             DrawPoints();
-            
-	}
+    }
 
     void DrawPoints()
     {
