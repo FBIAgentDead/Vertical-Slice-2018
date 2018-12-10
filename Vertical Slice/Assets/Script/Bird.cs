@@ -13,11 +13,11 @@ public class Bird : MonoBehaviour {
     public AudioSource schietGeluid;
     public AudioSource die;
 
-    public GameObject Vogel;
+    public GameObject vogel;
 
 	// Use this for initialization
 	void Start (){
-
+        vogel = this.gameObject;
 	}
 	
 	// Update is called once per frame
