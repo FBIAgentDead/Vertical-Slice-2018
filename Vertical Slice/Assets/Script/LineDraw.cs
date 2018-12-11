@@ -5,18 +5,19 @@ using UnityEngine;
 public class LineDraw : MonoBehaviour {
 
     public GameObject puntje;
+    private Bird checkFired;
     private bool firstPoint = true;
     List<GameObject> points = new List<GameObject>();
     private bool isFired;
 
     // Use this for initialization
     void Start () {
-		
+		checkFired = GetComponent<Bird>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (isFired)
+        if (checkFired.isShot)
             DrawPoints();
     }
 

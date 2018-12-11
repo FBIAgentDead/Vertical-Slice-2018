@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Catapult_0
     21300002: Catapult_1
+    21300004: Catapult_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -112,11 +113,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 493
-        y: 0
+        y: 1542
         width: 492
-        height: 2853
+        height: 1311
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,9 +133,29 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1542
         width: 493
-        height: 2853
+        height: 1311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985478ba70ed80840aa2f39084705698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catapult_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 985
+        height: 1542
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985478ba70ed80840aa2f39084705698
+      spriteID: f36216db668470f42b3b977f6f949f76
       vertices: []
       indices: 
       edges: []
