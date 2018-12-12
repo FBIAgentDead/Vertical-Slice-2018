@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour {
 
-	public void SceneSwitcher (string sceneName) {
+
+	public void SceneSwicther (string sceneName) {
 
         SceneManager.LoadScene(sceneName);
-	}
+
+    }
+	
 
 }
