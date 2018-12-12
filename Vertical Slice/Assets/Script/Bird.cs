@@ -44,7 +44,7 @@ public class Bird : MonoBehaviour {
     public void BirdDie()
     {
         //Verwijder Object
-        GameObject.Destroy(Vogel);
+        //GameObject.Destroy(Vogel);
         //Speel particle effect
 
         //geluidseffecten
