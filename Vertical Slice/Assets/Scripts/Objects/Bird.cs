@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour {
 
+    [SerializeField]
+    float force = 400;
+    [SerializeField]
+    Vector2 clampX;
+    [SerializeField]
+    Vector2 clampY;
     private int damage;
     [SerializeField]
     private Transform moveTowards;
@@ -40,7 +46,8 @@ public class Bird : MonoBehaviour {
         float t = 0; 
         while(Input.GetKey(KeyCode.Mouse0)){
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition = new Vector2(Mathf.Clamp(mousePosition.x, -6.15f, -1.94f), Mathf.Clamp(mousePosition.y, -2.73f, 2.67f));
+            // mousePosition = new Vector2(Mathf.Clamp(mousePosition.x, -6.15f, -1.94f), Mathf.Clamp(mousePosition.y, -2.73f, 2.67f));
+            mousePosition = new Vector2(Mathf.Clamp(mousePosition.x, clampX.x, clampX.y), Mathf.Clamp(mousePosition.y, clampY.x, clampY.y));
             transform.position = Vector2.Lerp(transform.position, mousePosition , t);
             //transform.position = Vector2.MoveTowards(transform.position, mousePosition, t);
             temp = true;
@@ -72,10 +79,6 @@ public class Bird : MonoBehaviour {
         if(isShot){
             birdBody.gravityScale = 1;
         }
-        // else
-        // {
-        //     BirdBoundry();
-        // }
     }
 
     public void LoadBird(Transform moveTo){
@@ -86,17 +89,12 @@ public class Bird : MonoBehaviour {
     {
         isShot = true;
         while(transform.position.x < -2.04f){
-            Vector2 oof = new Vector2(-2.04f, 9.07f);
-            birdBody.AddForce((moveTowards.transform.position - transform.position).normalized * 400);
+            birdBody.AddForce((moveTowards.transform.position - transform.position).normalized * force);
             yield return new WaitForSeconds(0.1f);
         }
         //katapult function
         //geluidseffecten
         // schietGeluid.Play();
-    }
-
-    private void BirdBoundry(){
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -6.15f, -1.94f),(Mathf.Clamp(transform.position.y, -2.73f, 2.67f)));
     }
 
 }
