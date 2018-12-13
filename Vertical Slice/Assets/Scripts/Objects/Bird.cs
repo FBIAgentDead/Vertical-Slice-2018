@@ -88,7 +88,7 @@ public class Bird : MonoBehaviour {
     public IEnumerator Shoot(Transform flyTowards)
     {
         isShot = true;
-        while(transform.position.x < -2.04f){
+        while(transform.position.x < -3.77f){
             birdBody.AddForce((moveTowards.transform.position - transform.position).normalized * force);
             yield return new WaitForSeconds(0.1f);
         }
