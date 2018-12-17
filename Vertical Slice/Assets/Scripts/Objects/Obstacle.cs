@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
-    private float health;
+    public float health = 100;
 
     public Sprite Spr100_50;
-    public Sprite Spr49_25;
-    public Sprite Spr24_0;
+    public Sprite Spr49_00;
 
     void Start () {
-		
+        CheckDeath();
 	}
 	
 	void Update () {
@@ -33,15 +32,11 @@ public class Obstacle : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        else if (health > 0 && health < 25) 
+        else if (health > 0  && health <= 50)
         {
-            currentSprite.sprite = Spr24_0;
+            currentSprite.sprite = Spr49_00;
         }
-        else if (health >= 25 && health < 50)
-        {
-            currentSprite.sprite = Spr49_25;
-        }
-        else if (health >= 50 && health <= 100)
+        else if (health > 50 && health <= 100)
         {
             currentSprite.sprite = Spr100_50;
         }
