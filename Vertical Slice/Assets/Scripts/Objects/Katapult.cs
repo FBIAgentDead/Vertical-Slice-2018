@@ -6,7 +6,7 @@ public class Katapult : MonoBehaviour
 {
 
     private float dragRange;
-    private bool isLoaded = true;
+    public bool isLoaded = true;
     [SerializeField]
     private Transform startPosition;
     [SerializeField]
@@ -63,7 +63,6 @@ public class Katapult : MonoBehaviour
         {
             if (amunition.Count > 0)
             {
-                Debug.Log("oof");
                 Vector2 distance = amunition[0].transform.position - dragLines[i].transform.position;
                 dragLines[0].transform.localScale = new Vector2(distance.magnitude / 1.23f, 1);
                 dragLines[1].transform.localScale = new Vector2(distance.magnitude / 1.13f, 1);

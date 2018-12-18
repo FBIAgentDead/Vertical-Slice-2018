@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1582,9 +1582,8 @@ GameObject:
   m_Component:
   - component: {fileID: 219587595}
   - component: {fileID: 219587594}
-  - component: {fileID: 219587592}
   - component: {fileID: 219587596}
-  - component: {fileID: 219587593}
+  - component: {fileID: 219587592}
   m_Layer: 0
   m_Name: witte bird
   m_TagString: Untagged
@@ -1592,20 +1591,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &219587592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 219587591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f385efcf2f77145bd1240bb5b907d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntje: {fileID: 1279943746816462, guid: d7192dfed8f92f24fa2b82a112965060, type: 2}
---- !u!58 &219587593
-CircleCollider2D:
+--- !u!61 &219587592
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1616,9 +1603,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5015463, y: -0.2508821}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.05, y: 12.08}
+    newSize: {x: 9.05, y: 12.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 4.8869457
+  m_Size: {x: 9.05, y: 12.08}
+  m_EdgeRadius: 0
 --- !u!212 &219587594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1671,13 +1668,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219587591}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0758127, w: -0.9971221}
+  m_LocalRotation: {x: -0, y: -0, z: 0.42171118, w: -0.90673023}
   m_LocalPosition: {x: 9.18, y: 3.65, z: -10}
   m_LocalScale: {x: 0.07440255, y: 0.07440255, z: 0.07440255}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.696}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -49.885002}
 --- !u!50 &219587596
 Rigidbody2D:
   serializedVersion: 4
@@ -4627,6 +4624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14313cdc77aa3ab40994215bc96f4570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLoaded: 1
   startPosition: {fileID: 1074863497}
   amunition:
   - {fileID: 1133632360}
@@ -9066,6 +9064,7 @@ GameObject:
   - component: {fileID: 1673928435}
   - component: {fileID: 1673928434}
   - component: {fileID: 1673928437}
+  - component: {fileID: 1673928438}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9151,6 +9150,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1673928438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673928433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5143b582afb32478133bec31fd1180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkState: {fileID: 822917693}
 --- !u!1 &1680530469
 GameObject:
   m_ObjectHideFlags: 0
