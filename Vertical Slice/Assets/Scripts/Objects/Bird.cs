@@ -19,6 +19,7 @@ public class Bird : MonoBehaviour {
     public bool released = false;
     private float timer = 5.0f;
 
+    public Animation paralax;
     public AudioSource schietGeluid;
     Rigidbody2D birdBody;
     public AudioSource die;
@@ -88,7 +89,7 @@ public class Bird : MonoBehaviour {
     public IEnumerator Shoot(Transform flyTowards)
     {
         isShot = true;
-        while(transform.position.x < -3.77f){
+        while(transform.position.x < 0){
             birdBody.AddForce((moveTowards.transform.position - transform.position).normalized * force);
             yield return new WaitForSeconds(0.1f);
         }
