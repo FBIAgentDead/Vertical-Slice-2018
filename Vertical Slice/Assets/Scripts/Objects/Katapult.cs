@@ -68,7 +68,6 @@ public class Katapult : MonoBehaviour
                 dragLines[1].transform.localScale = new Vector2(distance.magnitude / 1.13f, 1);
                 float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
                 angle += 180;
-                Debug.Log(angle);
                 dragLines[i].transform.localEulerAngles = new Vector3(0, 0, angle);
             }
         }

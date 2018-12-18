@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
 public class Bird : MonoBehaviour {
-
+    [SerializeField]
+    float damageMultiplier;
     [SerializeField]
     float force = 400;
     [SerializeField]
@@ -17,7 +19,6 @@ public class Bird : MonoBehaviour {
     private int velocity;
     public bool isShot;
     public bool released = false;
-    private float timer = 5.0f;
 
     public Animation paralax;
     public AudioSource schietGeluid;
@@ -25,6 +26,9 @@ public class Bird : MonoBehaviour {
     public AudioSource die;
 
     public GameObject vogel;
+    [SerializeField]
+    private ParticleSystem feathers;
+    bool featherOnce = true;
 
 	// Use this for initialization
 	void Start (){
@@ -35,9 +39,18 @@ public class Bird : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
+        if (featherOnce)
+        {
+            feathers.Play();
+            featherOnce = false;
+        }
         if (isShot)
         {
             StartCoroutine(KillBird());
+        }
+        if(collisionInfo.gameObject.tag == "obstacle"){
+            Obstacle setDamage = collisionInfo.gameObject.GetComponent<Obstacle>();
+            setDamage.GetDamage(birdBody.velocity.magnitude*birdBody.mass*damageMultiplier);
         }
     }
 
@@ -61,8 +74,12 @@ public class Bird : MonoBehaviour {
 
     private IEnumerator KillBird()
     {
-        timer -= 1;
-        yield return new WaitForSeconds(1);
+        int timer = 0;
+        while(timer < 3){
+            timer++;
+            yield return new WaitForSeconds(1);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void BirdDie()

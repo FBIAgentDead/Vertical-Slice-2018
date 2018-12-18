@@ -20,7 +20,6 @@ public class Obstacle : MonoBehaviour {
     public void GetDamage(float force)
     {
         health -= force;
-
         CheckDeath();
     }
 
