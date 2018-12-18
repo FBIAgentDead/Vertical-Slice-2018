@@ -12,6 +12,8 @@ public class Katapult : MonoBehaviour {
 	private List<Bird> amunition = new List<Bird>();
     [SerializeField]
     private List<GameObject> dragLines;
+    [SerializeField]
+    private GameObject slingHolder;
 
 	void Start()
 	{
@@ -35,6 +37,19 @@ public class Katapult : MonoBehaviour {
             }
             DragLines();
         }
+        if(!isLoaded){
+            for(int i = 0; i < dragLines.Count; i++){
+                dragLines[i].SetActive(false);
+            }
+            slingHolder.SetActive(true);
+        }
+        else
+        {
+            for(int i = 0; i < dragLines.Count; i++){
+                dragLines[i].SetActive(true);
+            }
+            slingHolder.SetActive(false);
+        }
         
     }
 
@@ -42,6 +57,7 @@ public class Katapult : MonoBehaviour {
     {
         for (int i = 0; i < dragLines.Count; i++)
         {
+            if(amunition.Count > 0){
             Debug.Log("oof");
             Vector2 distance = amunition[0].transform.position - dragLines[i].transform.position;
             dragLines[i].transform.localScale = new Vector2(distance.magnitude/2, 1);
@@ -50,6 +66,7 @@ public class Katapult : MonoBehaviour {
             angle += 180;
             Debug.Log(angle);
             dragLines[i].transform.localEulerAngles = new Vector3(0, 0, angle); 
+            }
         }
     }
 
